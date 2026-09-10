@@ -1,0 +1,39 @@
+# ---- Python -------------
+
+*.py[code]
+*.$py.class
+
+# Distribution / packaging
+
+dist/
+build/
+*.egg-info/
+*.egg
+
+#Virtual environments
+.venv/
+venv
+env/
+ENV/
+
+# --- Jupyter
+.ipynb_checkpoints/
+
+.env
+.env.local
+.env.*.local
+
+#IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- OS Generated ----
+
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini

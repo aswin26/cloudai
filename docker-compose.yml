@@ -1,0 +1,82 @@
+
+services:
+  data-tool:
+    build: .
+    # image: data-tool:latest
+    volumes:
+      - ./sample_data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  jupyter:
+    build: .
+    # entrypoint: ["jupyter","notebook"]
+    command: jupyter notebook
+      - "--ip=0.0.0.0"
+      - "--port=8888"
+      - "--no-browser"
+      - "--allow-root"
+      - "--NotebookApp.token="
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/app/notebooks
+      - ./sample_data:/app/sample_data
+
+  postgres:
+    build: 
+      context: infrastructure/docker
+      dockerfile: postgres.Dockerfile
+    
+    # platform: linux/amd64
+    container_name: data_tool_postgres
+    environment:
+       POSTGRES_USER: datauser
+       POSTGRES_PASSWORD: datapass
+       POSTGRES_DB: datatools
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U datauser -d datatools"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - data_tool_network
+
+volumes:
+  pgdata:
+
+networks:
+  data_tool_network:
+    
+
+
+
+
+  
+
+      # - ./output:/app/output
+    # environment:
+    #   - PYTHONUNBUFFERED=1
+    #   - NO_PROXY
+    # command: ["analyze","/app/data/sample.csv"]
+
+  # data-tool-debug:
+  #   build: .
+  #   image: data-tool:latest
+  #   volumes:
+  #     - ./sample_data:/app/data
+  #     - ./output:/app/output
+  #   environment:
+  #     - PYTHONUNBUFFERED=1
+  #   entrypoint: bash
+  #   stdin_open: true
+  #   tty: true
+  #   profiles:
+  #     - debug
+
+  

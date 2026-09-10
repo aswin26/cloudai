@@ -1,0 +1,16 @@
+date,product,category,quantity,unit_price,region
+2026-08-01,iPhone 15,Electronics,2,799.00,North America
+2026-08-01,Yoga Mat,Fitness,5,29.99,Europe
+2026-08-02,Running Shoes,Apparel,3,120.00,Asia
+2026-08-02,Coffee Maker,Appliances,1,89.50,North America
+2026-08-03,Leather Wallet,Accessories,4,45.00,Europe
+2026-08-03,Wireless Earbuds,Electronics,10,59.99,Asia
+2026-08-04,Desk Lamp,Home Decor,2,35.00,South America
+2026-08-04,Protein Powder,Fitness,6,49.99,North America
+2026-08-05,Ceramic Mug,Kitchen,,12.50,Europe
+2026-08-05,Smart Watch,Electronics,1,249.00,Australia
+2026-08-06,Hoodie,Apparel,4,,North America
+2026-08-06,Blender,Appliances,2,149.99,Asia
+2026-08-07,Water Bottle,Fitness,8,19.95,South America
+2026-08-07,Backpack,Accessories,,75.00,Europe
+
