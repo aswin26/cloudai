@@ -4,3 +4,4 @@ polars~=1.0.0
 jupyter==1.0.0  # notebook server
 matplotlib==3.8.4  # charting lib
 seaborn==0.13.2  # statistical visualisations
+python-dotenv==1.0.1 #env variables
